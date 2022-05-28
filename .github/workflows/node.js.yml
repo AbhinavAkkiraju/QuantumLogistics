@@ -32,7 +32,7 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: build-files
-        path: ./build
+        path: ./quantumlogistics/build
   
   deploy:
     defaults:
@@ -54,4 +54,4 @@ jobs:
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./quantumlogistics/build
+        publish_dir: ./build
