@@ -1,5 +1,6 @@
 import React from 'react'
-import {Footer, Header, OurMission} from './containers';
+import './App.css';
+import {Footer, Header, OurMission, UseNow} from './containers';
 import {Article, Brand, CTA, Feature, Navbar} from './components';
 
 const App = () => {
