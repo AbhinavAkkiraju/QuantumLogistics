@@ -1,12 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.31d6cfe0.css",
-    "main.js": "/static/js/main.171f8e04.js",
+    "main.css": "/static/css/main.cafa157b.css",
+    "main.js": "/static/js/main.06ea3eb5.js",
+    "static/media/Manrope-ExtraBold.ttf": "/static/media/Manrope-ExtraBold.1d1caae390e0175fb75f.ttf",
     "index.html": "/index.html",
-    "main.171f8e04.js.map": "/static/js/main.171f8e04.js.map"
+    "main.cafa157b.css.map": "/static/css/main.cafa157b.css.map",
+    "main.06ea3eb5.js.map": "/static/js/main.06ea3eb5.js.map"
   },
   "entrypoints": [
-    "static/css/main.31d6cfe0.css",
-    "static/js/main.171f8e04.js"
+    "static/css/main.cafa157b.css",
+    "static/js/main.06ea3eb5.js"
   ]
 }
