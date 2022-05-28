@@ -11,6 +11,9 @@ on:
 
 jobs:
   build:
+    defaults:
+      run:
+        working-directory: ./quantumlogistics/ 
 
     runs-on: ubuntu-latest
 
@@ -26,5 +29,5 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: npm ci ./quantumlogistics/
-    - run: npm run build --if-present ./quantumlogistics/
+    - run: npm ci
+    - run: npm run build --if-present 
