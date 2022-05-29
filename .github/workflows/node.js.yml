@@ -25,6 +25,7 @@ jobs:
         node-version: 16.x
         cache: 'npm'
     - run: npm ci
+    - run: export PUBLIC_URL=https://abhinavakkiraju.github.io/QuantumLogistics/ 
     - run: npm run build --if-present 
       env:
         CI: ""
