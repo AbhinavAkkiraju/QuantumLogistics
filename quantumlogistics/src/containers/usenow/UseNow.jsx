@@ -17,6 +17,12 @@ const UseNow = () => {
                 <input className='carbonpreference' type="text" placeholder='Enter Carbon Preference (1-100)...'/>
                 <button className='gradient__background'>GO</button>
             </div>
+            <div className="usenow-output">
+                <h1 className="truckdistance">Distance Travelled by Truck:</h1>
+                <h1 className="aircraftdistance">Distance Travelled by Aircraft:</h1>
+                <h1 className="boatdistance">Distance Travelled by Boat:</h1>
+                <h1 className="traindistance">Distance Travelled by Train:</h1>
+            </div>
         </div>
     )
 }
