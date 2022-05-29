@@ -15,6 +15,7 @@ const UseNow = () => {
                 <input className='economicpreference' type="text" placeholder='Enter Economic Preference (1-100)...'/>
                 <input className='speedpreference' type="text" placeholder='Enter Speed Preference (1-100)...'/>
                 <input className='carbonpreference' type="text" placeholder='Enter Carbon Preference (1-100)...'/>
+                <button className='gradient__background'>GO</button>
             </div>
         </div>
     )

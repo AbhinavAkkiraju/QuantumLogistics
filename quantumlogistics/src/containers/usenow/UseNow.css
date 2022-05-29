@@ -113,8 +113,26 @@
     background-color: #040C18;
     border: none;
     outline: none;
+    padding-bottom: 2rem;
     width: 30%;
     display: block;
     border-bottom: 0.3rem solid transparent;
     transition: all 0.3s;
+}
+
+.gradient__background {
+    border-radius: 20%;
+    outline: none;
+    width: 20%;
+    line-height: 40px;
+    font-size: 14px;
+    color: white;
+    justify-content: center;
+    align-items: flex-start;
+    margin-left: 6rem;
+    border-color: white;
+    background-color: transparent;
+    font-weight: 800;
+    cursor: pointer;
+    font-family: var(--font-family);
 }
