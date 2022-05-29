@@ -3,6 +3,8 @@ Optimize your shipping paths
 
 Created for the Q-munity Hack-Q-Thon
 
+[View live](https://abhinavakkiraju.github.io/QuantumLogistics/)
+
 ## Team members:
 [Abhinav Akkiraju](https://github.com/AbhinavAkkiraju)
 
