@@ -15,11 +15,11 @@ import flask
 from flask import request, jsonify
 import math
 from flask_cors import CORS, cross_origin
-
-# gcomp = Aer.get_backend('qasm_simulator')
-# qins = QuantumInstance(backend=gcomp, shots=100)
-# # qins = QuantumInstance(backend=Aer.get_backend("aer_simulator"), shots=100)
-# meo = MinimumEigenOptimizer(QAOA(COBYLA(maxiter=100), quantum_instance=qins))
+IBMQ.load_account()
+provider = IBMQ.get_provider('ibm-q')
+gcomp = provider.get_backend('ibm_washington')
+qins = QuantumInstance(backend=gcomp, shots=200)
+meo = MinimumEigenOptimizer(QAOA(COBYLA(maxiter=100), quantum_instance=qins))
 
 app = flask.Flask(__name__)
 geolocator = Nominatim(user_agent='app')
@@ -144,7 +144,7 @@ def getInfo():
         qp.minimize(linear={"KmB": w, "KmK": k, "KmM": m, "KmA": air})
     else:
         qp.minimize(linear={"KmK": k, "KmM": m, "KmA": (kmLand - k - m + w)})
-    solution = CplexOptimizer().solve(qp)
+    solution = meo.solve(qp)
     result = re.search('\[(.*)\]', str(solution)).group(1).replace(" ", "")[:-1].split(".")
     for i in range(0, len(result)):
         result[i] = int(result[i])
