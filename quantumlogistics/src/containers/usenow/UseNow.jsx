@@ -32,15 +32,20 @@ const UseNow = () => {
                     <input onChange={(e) => setcp(e.target.value)} value={cp} className='carbonpreference' type="text" placeholder='Enter Carbon Preference (1-100)...' />
                     <input type="submit" className='gradient__background' value="GO" />
                 </form>
-                <label> Distance flown (km):
-                    <input type="text" value={weight} className="startinglocation" />
-                </label>
             </div>
             <div className="usenow-output">
-                <h1 className="truckdistance">Distance Travelled by Truck:</h1>
-                <h1 className="aircraftdistance">Distance Travelled by Aircraft:</h1>
-                <h1 className="boatdistance">Distance Travelled by Boat:</h1>
-                <h1 className="traindistance">Distance Travelled by Train:</h1>
+                <label className='truckdistance'> Distance Travelled by Truck (km):
+                    <input type="text" value={weight} className="startinglocation outtext" />
+                </label>
+                <label className='aircraftdistance'> Distance Travelled by Aircraft (km):
+                    <input type="text" value={weight} className="startinglocation outtext" />
+                </label>
+                <label className='boatdistance'> Distance Travelled by Boat (km):
+                    <input type="text" value={weight} className="startinglocation outtext" />
+                </label>
+                <label className='traindistance'> Distance Travelled by Train (km):
+                    <input type="text" value={weight} className="startinglocation outtext" />
+                </label>
             </div>
         </div>
     )
