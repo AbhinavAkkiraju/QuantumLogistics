@@ -1,0 +1,110 @@
+.ourmission {
+    padding-top: 5rem;
+}
+
+.ourmission-feature {
+    display: flex;
+}
+
+.ourmission-feature h1 {
+    font-size: 22px;
+    margin-left: -0.75rem;
+}
+
+.ourmission-heading h1 {
+    margin-left: 0.25rem;
+}
+
+.ourmission-solve h1{
+    color: white;
+    font-family: var(--font-family);
+    margin-left: 0.5rem;
+    padding-top: 2rem;
+    font-size: 18px;
+}
+
+.ourmission-feature .features-container-feature {
+    margin-left: 2rem;
+}
+
+.ourmission-feature .ourmission-features-container-feature-text {
+    max-width: 700px;
+}
+
+.ourmission-heading {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ourmission-heading h1 {
+    font-size: 34px;
+    line-height: 45px;
+    font-weight: 800;
+    font-family: var(--font-family);
+    max-width: 510px;
+}
+
+.ourmission-heading p {
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+.ourmission-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-left: -0.5rem;
+    margin-top: 2rem;
+}
+
+.ourmission-container .ourmission-features-container-feature {
+    flex: 1;
+    margin: 1rem;
+    min-width: 210px;
+    display: unset;
+    flex-direction: column;
+}
+
+.ourmission-container .ourmission-features-container-feature-text {
+    margin-top: 0.5rem;
+}
+
+@media screen and (max-width: 850px) {
+    .ourmission-heading {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 0rem;
+    }
+
+    .ourmission-heading p {
+        margin-top: 1rem;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .ourmission-feature .ourmission-features-container-feature {
+        flex-direction: column;
+    }
+
+    .ourmission-feature .ourmission-features-container-feature-text {
+        margin-top: 0.5rem;
+    }
+
+    .ourmission-heading h1 {
+        font-size: 28px;
+        line-height: 40px;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .ourmission-container .ourmission-features-container-_feature {
+        margin: 1rem 0;
+        min-width: 100%;
+    }
+}
