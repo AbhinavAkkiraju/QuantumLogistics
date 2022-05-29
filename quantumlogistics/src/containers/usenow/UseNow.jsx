@@ -48,7 +48,7 @@ export default class UseNow extends React.Component {
         }
         return (
             <div className="usenow section-margin" id="usenow" >
-                <div className="usenow-feature">
+                <div className="gradient__text">
                     <Feature title="USE NOW" />
                 </div>
                 <div className='break'></div>
