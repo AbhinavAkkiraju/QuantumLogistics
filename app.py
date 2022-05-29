@@ -143,6 +143,30 @@ def getInfo():
     else:
         qp.minimize({"KmK": k, "KmM": m, "KmA": (kmLand - k - m + w)})
     solution = CplexOptimizer().solve(qp)
-    result = re.search('[(.*)]', solution)
-    print(result.group(1))
-app.run(host='192.168.1.88', port=443)
+    result = re.search('\[(.*)\]', str(solution)).group(1).replace(" ", "")[:-1].split(".")
+    for i in range(0, len(result)):
+        result[i] = int(result[i])
+    print(result)
+
+    carbonFootPrint = 62 * result[0] * ton
+    carbonFootPrint += 8 * result[2] * ton
+    carbonFootPrint += 22 * result[1] * ton
+    carbonFootPrint += 602 * result[3] * ton
+
+    price = 0.18 * result[0] * ton
+    price += 0.29 * result[2] * ton
+    price += 0.16 * result[1] * ton
+    price += 0.98 * result[3] * ton
+
+    conversion_factor = 0.62137119
+    time = 0
+    if result[0] != 0:
+        time += (result[0] / 36) / conversion_factor
+    if result[2] != 0:
+        time += (result[2] / 21) / conversion_factor
+    if result[1] != 0:
+        time += (result[1] / 15) / conversion_factor
+    if result[3] != 0:
+        time += (result[3] / 575) / conversion_factor
+    return jsonify({"truck": result[0], "train": result[1], "boat": result[2], "aircraft": result[3], "co2": carbonFootPrint, "price": price, "time": time})
+app.run(host='192.168.1.13', port=80)
