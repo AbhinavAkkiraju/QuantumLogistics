@@ -64,25 +64,25 @@ export default class UseNow extends React.Component {
                     </form>
                 </div>
                 <div className="usenow-output">
-                    <label className='truckdistance outlable'> Distance Travelled by Truck (km):
+                    <label className='truckdistance outlabel'> Distance Travelled by Truck (km):
                         <input type="text" value={this.state.truck} className="startinglocation outtext" />
                     </label>
-                    <label className='aircraftdistance outlable'> Distance Travelled by Aircraft (km):
+                    <label className='aircraftdistance outlabel'> Distance Travelled by Aircraft (km):
                         <input type="text" value={this.state.air} className="startinglocation outtext" />
                     </label>
-                    <label className='boatdistance outlable'> Distance Travelled by Boat (km):
+                    <label className='boatdistance outlabel'> Distance Travelled by Boat (km):
                         <input type="text" value={this.state.boat} className="startinglocation outtext" />
                     </label>
-                    <label className='traindistance outlable'> Distance Travelled by Train (km):
+                    <label className='traindistance outlabel'> Distance Travelled by Train (km):
                         <input type="text" value={this.state.train} className="startinglocation outtext" />
                     </label>
-                    <label className='traindistance outlable'> Estimated Carbon Emissions (g):
+                    <label className='traindistance outlabel'> Estimated Carbon Emissions (g):
                         <input type="text" value={this.state.carbon} className="startinglocation outtext" />
                     </label>
-                    <label className='traindistance outlable'> Estimated Cost (USD):
+                    <label className='traindistance outlabel'> Estimated Cost (USD):
                         <input type="text" value={this.state.cost} className="startinglocation outtext" />
                     </label>
-                    <label className='traindistance outlable'> Estimated Travel Time (Hr):
+                    <label className='traindistance outlabel'> Estimated Travel Time (Hr):
                         <input type="text" value={this.state.time} className="startinglocation outtext" />
                     </label>
                 </div>
