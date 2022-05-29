@@ -120,6 +120,40 @@
     transition: all 0.3s;
 }
 
+.truckdistance {
+    color: white;
+    font-size: 16px;
+    font-family: var(--font-family);
+    margin-top: -24.4rem;
+    margin-left: 35rem;
+}
+
+.aircraftdistance {
+    color: white;
+    font-size: 16px;
+    font-family: var(--font-family);
+    margin-top: -24.4rem;
+    margin-left: 35rem;
+    padding-top: 2rem;
+}
+
+.boatdistance {
+    color: white;
+    font-size: 16px;
+    font-family: var(--font-family);
+    margin-top: -24.4rem;
+    margin-left: 35rem;
+}
+
+.traindistance {
+    color: white;
+    font-size: 16px;
+    font-family: var(--font-family);
+    margin-top: -24.4rem;
+    margin-left: 35rem;
+    margin-bottom: 35rem;
+}
+
 .gradient__background {
     border-radius: 5px;
     outline: none;
