@@ -12,10 +12,32 @@ const UseNow = () => {
     const [sp, setsp] = useState("")
     const [cp, setcp] = useState("")
 
+    let truck
+    let air
+    let boat
+    let train
+    let carbon
+    let cost 
+    let time
+
     const handleSubmit = (event) => {
         event.preventDefault();
         alert(`${startinglocation}${destinationlocation}`)
-        //fetch('http://athesto-dev.ddns.net/?city1=' + {startinglocation} + '&city2=' + {destinationlocation})
+        fetch(`http://athesto-dev.ddns.net/?city1=${startinglocation}&city2=${destinationlocation}&ton=${weight}&ep=${ep}&cp=${cp}&sp=${sp}`,
+            {
+                method: 'GET'
+            }
+        )
+        .then(res => res.json())
+        .then(json => {
+            truck = json.truck
+            air = json.aircraft
+            boat = json.boat
+            carbon = json.co2
+            cost = json.price
+            train = json.train
+            time = json.time
+        })
     }
     return (
         <div className="usenow section-margin" id="usenow">
@@ -35,26 +57,26 @@ const UseNow = () => {
                 </form>
             </div>
             <div className="usenow-output">
-                <label className='truckdistance outlabel'> Distance Travelled by Truck (km):
-                    <input type="text" value={weight} className="startinglocation outtext" />
+                <label className='truckdistance outlable'> Distance Travelled by Truck (km):
+                    <input type="text" value={truck} className="startinglocation outtext" />
                 </label>
-                <label className='aircraftdistance outlabel'> Distance Travelled by Aircraft (km):
-                    <input type="text" value={weight} className="startinglocation outtext" />
+                <label className='aircraftdistance outlable'> Distance Travelled by Aircraft (km):
+                    <input type="text" value={air} className="startinglocation outtext" />
                 </label>
-                <label className='boatdistance outlabel'> Distance Travelled by Boat (km):
-                    <input type="text" value={weight} className="startinglocation outtext" />
+                <label className='boatdistance outlable'> Distance Travelled by Boat (km):
+                    <input type="text" value={boat} className="startinglocation outtext" />
                 </label>
-                <label className='traindistance outlabel'> Distance Travelled by Train (km):
-                    <input type="text" value={weight} className="startinglocation outtext" />
+                <label className='traindistance outlable'> Distance Travelled by Train (km):
+                    <input type="text" value={train} className="startinglocation outtext" />
                 </label>
-                <label className='traindistance outlabel'> Estimated Carbon Emissions (g):
-                    <input type="text" value={weight} className="startinglocation outtext" />
+                <label className='traindistance outlable'> Estimated Carbon Emissions (g):
+                    <input type="text" value={carbon} className="startinglocation outtext" />
                 </label>
                 <label className='traindistance outlable'> Estimated Cost (USD):
-                    <input type="text" value={weight} className="startinglocation outtext" />
+                    <input type="text" value={cost} className="startinglocation outtext" />
                 </label>
-                <label className='traindistance outlabel'> Estimated Travel Time (Hr):
-                    <input type="text" value={weight} className="startinglocation outtext" />
+                <label className='traindistance outlable'> Estimated Travel Time (Hr):
+                    <input type="text" value={time} className="startinglocation outtext" />
                 </label>
             </div>
         </div>
