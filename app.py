@@ -10,6 +10,7 @@ from qiskit.utils import QuantumInstance
 from qiskit.algorithms import QAOA
 from qiskit.algorithms.optimizers import COBYLA
 from qiskit import Aer
+from geopy.geocoders import Nominatim
 import flask
 from flask import request, jsonify
 import math
@@ -20,6 +21,7 @@ import math
 # meo = MinimumEigenOptimizer(QAOA(COBYLA(maxiter=100), quantum_instance=qins))
 
 app = flask.Flask(__name__)
+geolocator = Nominatim(user_agent='app')
 
 lat1 = 0
 long1 = -122.205335
@@ -42,20 +44,16 @@ def getInfo():
     global ep
     global cp
     global sp
-    if 'lat1' in request.args:
-        lat1 = float64(request.args['lat1'])
+    if 'city1' in request.args:
+        lat1 = geolocator.geocode((request.args['city1'])).latitude
+        long1 = geolocator.geocode((request.args['city1'])).longitude
+        print(lat1, long1)
     else:
         return "Error"
-    if 'long1' in request.args:
-        long1 = float64(request.args['long1'])
-    else:
-        return "Error"
-    if 'lat2' in request.args:
-        lat2 = float64(request.args['lat2'])
-    else:
-        return "Error"
-    if 'long2' in request.args:
-        long2 = float64(request.args['long2'])
+    if 'city2' in request.args:
+        lat2 = geolocator.geocode((request.args['city2'])).latitude
+        long2 = geolocator.geocode((request.args['city2'])).longitude
+        print(lat2, long2)
     else:
         return "Error"
     if 'ton' in request.args:
@@ -99,7 +97,8 @@ def getInfo():
             curSeg = [g['s12'], g['s12']]
         elif curSeg[1] < g['s12']:
             curSeg[1] = g['s12']
-
+        if i == n and len(segments) == 0:
+            segments.append([curSeg[1] / 1000, True])
     for i in segments:
         if i[1]:
             kmLand += i[0]
@@ -141,28 +140,46 @@ def getInfo():
     if kmWater > 0:
         qp.minimize(linear={"KmB": w, "KmK": k, "KmM": m, "KmA": air})
     else:
-        qp.minimize({"KmK": k, "KmM": m, "KmA": (kmLand - k - m + w)})
+        qp.minimize(linear={"KmK": k, "KmM": m, "KmA": (kmLand - k - m + w)})
     solution = CplexOptimizer().solve(qp)
     result = re.search('\[(.*)\]', str(solution)).group(1).replace(" ", "")[:-1].split(".")
     for i in range(0, len(result)):
         result[i] = int(result[i])
     print(result)
 
-    carbonFootPrint = 62 * result[0] * ton
-    carbonFootPrint += 8 * result[2] * ton
-    carbonFootPrint += 22 * result[1] * ton
-    carbonFootPrint += 602 * result[3] * ton
-
-    price = 0.18 * result[0] * ton
-    price += 0.29 * result[2] * ton
-    price += 0.16 * result[1] * ton
-    price += 0.98 * result[3] * ton
-
-    conversion_factor = 0.62137119
     time = 0
-    time += (result[0] / 36) / conversion_factor
-    time += (result[2] / 21) / conversion_factor
-    time += (result[1] / 15) / conversion_factor
-    time += (result[3] / 575) / conversion_factor
-    return jsonify({"truck": result[0], "train": result[1], "boat": result[2], "aircraft": result[3], "co2": carbonFootPrint, "price": price, "time": time})
-app.run(host='192.168.1.13', port=80)
+    carbonFootPrint = 0
+    price = 0
+    if len(result) == 4:
+        carbonFootPrint += 62 * result[0] * ton
+        carbonFootPrint += 8 * result[2] * ton
+        carbonFootPrint += 22 * result[1] * ton
+        carbonFootPrint += 602 * result[3] * ton
+
+        price += 0.18 * result[0] * ton
+        price += 0.29 * result[2] * ton
+        price += 0.16 * result[1] * ton
+        price += 0.98 * result[3] * ton
+
+        conversion_factor = 0.62137119
+
+        time += (result[0] / 36) / conversion_factor
+        time += (result[2] / 21) / conversion_factor
+        time += (result[1] / 15) / conversion_factor
+        time += (result[3] / 575) / conversion_factor
+        return jsonify({"truck": result[0], "train": result[1], "boat": result[2], "aircraft": result[3], "co2": carbonFootPrint, "price": price, "time": time})
+    else:
+        carbonFootPrint += 62 * result[0] * ton
+        carbonFootPrint += 22 * result[1] * ton
+        carbonFootPrint += 602 * result[2] * ton
+
+        price += 0.18 * result[0] * ton
+        price += 0.16 * result[1] * ton
+        price += 0.98 * result[2] * ton
+
+        conversion_factor = 0.62137119
+        time += (result[0] / 36) / conversion_factor
+        time += (result[1] / 15) / conversion_factor
+        time += (result[2] / 575) / conversion_factor
+        return jsonify({"truck": result[0], "train": result[1], "boat": 0, "aircraft": result[2], "co2": carbonFootPrint, "price": price, "time": time})
+app.run(host='192.168.1.23', port=80)
