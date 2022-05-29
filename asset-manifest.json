@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/QuantumLogistics/static/css/main.f710583a.css",
-    "main.js": "/QuantumLogistics/static/js/main.661dcb5a.js",
+    "main.css": "/QuantumLogistics/static/css/main.2ecfec00.css",
+    "main.js": "/QuantumLogistics/static/js/main.7dffc328.js",
     "static/media/Manrope-ExtraBold.ttf": "/QuantumLogistics/static/media/Manrope-ExtraBold.1d1caae390e0175fb75f.ttf",
     "index.html": "/QuantumLogistics/index.html",
-    "main.f710583a.css.map": "/QuantumLogistics/static/css/main.f710583a.css.map",
-    "main.661dcb5a.js.map": "/QuantumLogistics/static/js/main.661dcb5a.js.map"
+    "main.2ecfec00.css.map": "/QuantumLogistics/static/css/main.2ecfec00.css.map",
+    "main.7dffc328.js.map": "/QuantumLogistics/static/js/main.7dffc328.js.map"
   },
   "entrypoints": [
-    "static/css/main.f710583a.css",
-    "static/js/main.661dcb5a.js"
+    "static/css/main.2ecfec00.css",
+    "static/js/main.7dffc328.js"
   ]
 }
