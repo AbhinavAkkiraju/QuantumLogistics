@@ -13,8 +13,9 @@
     flex-grow: 1;
 }
 
-.usenow-feature h1 {
-    font-size: 22px;
+.gradient__text h1 {
+    font-size: 25px;
+    margin-top: 3rem;
     margin-left: 5rem;
 }
 
@@ -133,7 +134,7 @@
 
 .truckdistance {
     color: white;
-    font-size: 16px;
+    font-size: 14px;
     font-family: var(--font-family);
     margin-top: -24.4rem;
     margin-left: 35rem;
@@ -141,7 +142,7 @@
 
 .aircraftdistance {
     color: white;
-    font-size: 16px;
+    font-size: 14px;
     font-family: var(--font-family);
     margin-top: -24.4rem;
     margin-left: 35rem;
@@ -150,16 +151,16 @@
 
 .outtext {
     margin-left: 200px;
-    margin-bottom: 20px;
+    margin-bottom: 3px;
 }
 
-.outlable {
+.outlabel {
     margin-left: 200px;
 }
 
 .boatdistance {
     color: white;
-    font-size: 16px;
+    font-size: 14px;
     font-family: var(--font-family);
     margin-top: -24.4rem;
     margin-left: 200px;
@@ -167,7 +168,7 @@
 
 .traindistance {
     color: white;
-    font-size: 16px;
+    font-size: 14px;
     font-family: var(--font-family);
     margin-top: -24.4rem;
     margin-left: 200px;

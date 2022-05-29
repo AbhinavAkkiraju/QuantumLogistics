@@ -23,13 +23,6 @@ export default class UseNow extends React.Component {
         let [sp, setsp] = []//useState("")
         let [cp, setcp] = []//useState("")
     
-        let truck
-        let air
-        let boat
-        let train
-        let carbon
-        let cost
-        let time
 
         let that = this
         function handleSubmit(event) {
