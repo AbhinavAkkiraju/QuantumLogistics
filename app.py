@@ -145,4 +145,4 @@ def getInfo():
     solution = CplexOptimizer().solve(qp)
     result = re.search('[(.*)]', solution)
     print(result.group(1))
-app.run()
+app.run(host='10.138.0.2', port=80)
