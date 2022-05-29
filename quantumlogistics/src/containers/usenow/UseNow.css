@@ -13,8 +13,9 @@
     flex-grow: 1;
 }
 
-.usenow-feature h1 {
-    font-size: 22px;
+.gradient__text h1 {
+    font-size: 25px;
+    margin-top: 3rem;
     margin-left: 5rem;
 }
 
@@ -150,7 +151,7 @@
 
 .outtext {
     margin-left: 200px;
-    margin-bottom: 10px;
+    margin-bottom: 3px;
 }
 
 .outlabel {
