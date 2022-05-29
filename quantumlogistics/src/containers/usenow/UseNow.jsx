@@ -22,6 +22,7 @@ const UseNow = () => {
             <div className="usenow-feature">
                 <Feature title="USE NOW" />
             </div>
+            <div className='break'></div>
             <div className="usenow-input">
                 <form onSubmit={handleSubmit}>
                     <input onChange={(e) => setstartinglocation(e.target.value)} value={startinglocation} className='startinglocation' type="text" placeholder='Enter Starting Location (City)...' />
@@ -30,20 +31,29 @@ const UseNow = () => {
                     <input onChange={(e) => setep(e.target.value)} value={ep} className='economicpreference' type="text" placeholder='Enter Economic Preference (1-100)...' />
                     <input onChange={(e) => setsp(e.target.value)} value={sp} className='speedpreference' type="text" placeholder='Enter Speed Preference (1-100)...' />
                     <input onChange={(e) => setcp(e.target.value)} value={cp} className='carbonpreference' type="text" placeholder='Enter Carbon Preference (1-100)...' />
-                    <input type="submit" className='gradient__background' value="GO" />
+                    <input type="submit" className='gradient__background nopercent' value="GO" />
                 </form>
             </div>
             <div className="usenow-output">
-                <label className='truckdistance'> Distance Travelled by Truck (km):
+                <label className='truckdistance outlable'> Distance Travelled by Truck (km):
                     <input type="text" value={weight} className="startinglocation outtext" />
                 </label>
-                <label className='aircraftdistance'> Distance Travelled by Aircraft (km):
+                <label className='aircraftdistance outlable'> Distance Travelled by Aircraft (km):
                     <input type="text" value={weight} className="startinglocation outtext" />
                 </label>
-                <label className='boatdistance'> Distance Travelled by Boat (km):
+                <label className='boatdistance outlable'> Distance Travelled by Boat (km):
                     <input type="text" value={weight} className="startinglocation outtext" />
                 </label>
-                <label className='traindistance'> Distance Travelled by Train (km):
+                <label className='traindistance outlable'> Distance Travelled by Train (km):
+                    <input type="text" value={weight} className="startinglocation outtext" />
+                </label>
+                <label className='traindistance outlable'> Estimated Carbon Emissions (g):
+                    <input type="text" value={weight} className="startinglocation outtext" />
+                </label>
+                <label className='traindistance outlable'> Estimated Cost (USD):
+                    <input type="text" value={weight} className="startinglocation outtext" />
+                </label>
+                <label className='traindistance outlable'> Estimated Travel Time (Hr):
                     <input type="text" value={weight} className="startinglocation outtext" />
                 </label>
             </div>
