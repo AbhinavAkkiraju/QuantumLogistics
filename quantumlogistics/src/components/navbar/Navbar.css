@@ -49,6 +49,10 @@
     cursor: pointer;
 }
 
+.navbar-sign p {
+    line-height: 42px;
+}
+
 .navbar-sign button,
 .navbar-menu-container button {
     padding: 0.5rem 1rem;
@@ -62,6 +66,11 @@
     border: 0;
     outline: none;
     cursor: pointer;
+}
+
+.navbar-sign {
+    display: flex;
+    line-height: 25px;
 }
 
 .navbar-menu {
@@ -102,5 +111,33 @@ navbar-menu svg {
 @media screen and (max-width: 1050px) {
     .navbar-links-container {
         display: none;
+    }
+
+    .navbar-menu {
+        display: flex;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .navbar {
+        padding: 2rem 4rem;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .navbar {
+        padding: 2rem;
+    }
+
+    .navbar-sign {
+        display: none;
+    }
+
+    .navbar-menu-container {
+        top: 20px;
+    }
+
+    .navbar-menu-container-links-sign {
+        display: block;
     }
 }
