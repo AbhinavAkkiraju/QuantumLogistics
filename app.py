@@ -14,6 +14,7 @@ from geopy.geocoders import Nominatim
 import flask
 from flask import request, jsonify
 import math
+from flask_cors import CORS, cross_origin
 
 # gcomp = Aer.get_backend('qasm_simulator')
 # qins = QuantumInstance(backend=gcomp, shots=100)
@@ -22,6 +23,7 @@ import math
 
 app = flask.Flask(__name__)
 geolocator = Nominatim(user_agent='app')
+cors = CORS(app, resources={"/": {"origins": "*"}})
 
 lat1 = 0
 long1 = -122.205335
@@ -35,6 +37,7 @@ cp = 33
 sp = 33
 
 @app.route('/', methods=['GET'])
+@cross_origin()
 def getInfo():
     global lat1
     global long1
