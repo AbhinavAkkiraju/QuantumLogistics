@@ -160,13 +160,9 @@ def getInfo():
 
     conversion_factor = 0.62137119
     time = 0
-    if result[0] != 0:
-        time += (result[0] / 36) / conversion_factor
-    if result[2] != 0:
-        time += (result[2] / 21) / conversion_factor
-    if result[1] != 0:
-        time += (result[1] / 15) / conversion_factor
-    if result[3] != 0:
-        time += (result[3] / 575) / conversion_factor
+    time += (result[0] / 36) / conversion_factor
+    time += (result[2] / 21) / conversion_factor
+    time += (result[1] / 15) / conversion_factor
+    time += (result[3] / 575) / conversion_factor
     return jsonify({"truck": result[0], "train": result[1], "boat": result[2], "aircraft": result[3], "co2": carbonFootPrint, "price": price, "time": time})
 app.run(host='192.168.1.13', port=80)
