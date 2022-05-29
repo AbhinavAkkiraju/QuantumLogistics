@@ -1,0 +1,120 @@
+.usenow {
+    padding-top: 8rem;
+}
+
+.usenow-feature {
+    display: flex;
+}
+
+.usenow-feature h1 {
+    font-size: 22px;
+    margin-left: 5rem;
+}
+
+.startinglocation {
+    font-family: var(--font-family);
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    line-height: 26px;
+    margin-top: 1rem;
+    margin-left: 5.7rem;
+    padding: 5px 5px;
+    border-radius: 0.2rem;
+    background-color: #040C18;
+    border: none;
+    outline: none;
+    width: 30%;
+    display: block;
+    border-bottom: 0.3rem solid transparent;
+    transition: all 0.3s;
+}
+
+.destinationlocation {
+    font-family: var(--font-family);
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    line-height: 26px;
+    margin-top: 1rem;
+    margin-left: 5.7rem;
+    padding: 5px 5px;
+    border-radius: 0.2rem;
+    background-color: #040C18;
+    border: none;
+    outline: none;
+    width: 30%;
+    display: block;
+    border-bottom: 0.3rem solid transparent;
+    transition: all 0.3s;
+}
+
+.weight {
+    font-family: var(--font-family);
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    line-height: 26px;
+    margin-top: 1rem;
+    margin-left: 5.7rem;
+    padding: 5px 5px;
+    border-radius: 0.2rem;
+    background-color: #040C18;
+    border: none;
+    outline: none;
+    width: 30%;
+    display: block;
+    border-bottom: 0.3rem solid transparent;
+    transition: all 0.3s;
+}
+
+.economicpreference {
+    font-family: var(--font-family);
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    line-height: 26px;
+    margin-top: 1rem;
+    margin-left: 5.7rem;
+    padding: 5px 5px;
+    border-radius: 0.2rem;
+    background-color: #040C18;
+    border: none;
+    outline: none;
+    width: 30%;
+    display: block;
+    border-bottom: 0.3rem solid transparent;
+    transition: all 0.3s;
+}
+
+.speedpreference {
+    font-family: var(--font-family);
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    line-height: 26px;
+    margin-top: 1rem;
+    margin-left: 5.7rem;
+    padding: 5px 5px;
+    border-radius: 0.2rem;
+    background-color: #040C18;
+    border: none;
+    outline: none;
+    width: 30%;
+    display: block;
+    border-bottom: 0.3rem solid transparent;
+    transition: all 0.3s;
+}
+
+.carbonpreference {
+    font-family: var(--font-family);
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    line-height: 26px;
+    margin-top: 1rem;
+    margin-left: 5.7rem;
+    padding: 5px 5px;
+    border-radius: 0.2rem;
+    background-color: #040C18;
+    border: none;
+    outline: none;
+    width: 30%;
+    display: block;
+    border-bottom: 0.3rem solid transparent;
+    transition: all 0.3s;
+}

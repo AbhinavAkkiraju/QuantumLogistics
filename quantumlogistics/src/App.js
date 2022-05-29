@@ -1,22 +1,18 @@
-import React from 'react'
+import React from 'react';
+import { Header, OurMission, UseNow } from './containers';
+import { Navbar } from './components';
+
 import './App.css';
-import {Footer, Header, OurMission, UseNow} from './containers';
-import {Article, Brand, CTA, Feature, Navbar} from './components';
 
-const App = () => {
-    return (
-        <div className="App">
-            <div className="background">
-                <Navbar />
-                <Header />
-            </div>
-            <Brand />
-            <Feature />
-            <CTA />
-            <OurMission />
-            <Footer />
-        </div>
-    )
-}
+const App = () => (
+  <div className="App">
+    <div className="gradient__bg">
+      <Navbar />
+      <Header />
+    </div>
+    <UseNow/>
+    <OurMission/>
+  </div>
+);
 
-export default App
+export default App;

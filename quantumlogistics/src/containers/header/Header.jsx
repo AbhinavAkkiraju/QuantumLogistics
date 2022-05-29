@@ -1,6 +1,5 @@
 import React from 'react';
 import './Header.css';
-import scl from './scl.png';
 
 const Header = () => {
     return (
