@@ -113,7 +113,7 @@
     background-color: #040C18;
     border: none;
     outline: none;
-    padding-bottom: 2rem;
+    margin-bottom: 2rem;
     width: 30%;
     display: block;
     border-bottom: 0.3rem solid transparent;
@@ -121,7 +121,7 @@
 }
 
 .gradient__background {
-    border-radius: 20%;
+    border-radius: 5px;
     outline: none;
     width: 20%;
     line-height: 40px;
@@ -135,4 +135,9 @@
     font-weight: 800;
     cursor: pointer;
     font-family: var(--font-family);
+}
+
+.startinglocation, .destinationlocation, .weight, .economicpreference, .speedpreference, .carbonpreference {
+    background-color: #031B34;
+    max-width: 300px;
 }
